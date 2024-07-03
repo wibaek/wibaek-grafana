@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   prometheus:
     image: prom/prometheus:latest
@@ -19,8 +18,12 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - TZ=Asia/Seoul
     volumes:
       - grafana-data:/var/lib/grafana
+      - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml
+      - ./grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
 
 volumes:
   grafana-data:
