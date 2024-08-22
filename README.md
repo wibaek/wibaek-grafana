@@ -1,6 +1,10 @@
 # Before run
 Don't forget to change `GF_SECURITY_ADMIN_PASSWORD` in `docker-compose.yml` file
 
+## Requirements
+- Docker
+- docker-compose
+
 # Run prometheus/grafana server
 ```shell
 docker-compose up --build -d
